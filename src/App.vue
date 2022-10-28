@@ -1,19 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>asdas</h1>
+    <ul>
+      <li v-for="(mostrar, index) in lista" :key="index">
+      
+    <strong> Nombre:</strong>{{ mostrar.name.title }} {{ mostrar.name.first }} {{ mostrar.name.last }},
+     <strong>genero:</strong> {{mostrar.gender}}, <strong>pais:</strong> {{mostrar.location.country}}
+    
+     <img :src="mostrar.picture.medium"/>   
+     <br><br> <br><br>
+    </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import datos from "./users.json";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "AppVue",
+  data() {
+
+    return {
+      lista: [],
+      textoj: String
+    };
+  },
+  mounted() {
+    this.lista = datos;
+    this.textoj= JSON.stringify(datos.data);
+    // console.log(this.textoj);
+    datos.forEach(item=> {console.log(item.name);});
   }
-}
+
+
+};
+
 </script>
 
 <style>
