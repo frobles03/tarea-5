@@ -3,13 +3,24 @@
     <h1>asdas</h1>
     <ul>
       <li v-for="(mostrar, index) in lista" :key="index">
-      
-    <strong> Nombre:</strong>{{ mostrar.name.title }} {{ mostrar.name.first }} {{ mostrar.name.last }},
-     <strong>genero:</strong> {{mostrar.gender}}, <strong>pais:</strong> {{mostrar.location.country}}
-    
-     <img :src="mostrar.picture.medium"/>   
-     <br><br> <br><br>
-    </li>
+
+        <strong> Nombre:</strong>{{ mostrar.name.title }} {{ mostrar.name.first }} {{ mostrar.name.last }},
+        <strong>genero:</strong> {{ mostrar.gender }}, <strong>pais:</strong> {{ mostrar.location.country }}
+
+        <img :src="mostrar.picture.medium" />
+        <div v-if="mostrar.dob.age>=18 &&  mostrar.dob.age<50">
+         <strong>Rango de edad: </strong> adulto
+        </div>
+        <div v-else-if="mostrar.dob.age<=17">
+          <strong>Rango de edad: </strong> niño
+        </div>
+        <div v-else-if="mostrar.dob.age >=50 ">
+          <strong>Rango de edad: </strong>  abuelo
+        </div>
+
+
+        <br><br> <br><br>
+      </li>
     </ul>
   </div>
 </template>
@@ -27,9 +38,9 @@ export default {
   },
   mounted() {
     this.lista = datos;
-    this.textoj= JSON.stringify(datos.data);
+    this.textoj = JSON.stringify(datos.data);
     // console.log(this.textoj);
-    datos.forEach(item=> {console.log(item.name);});
+    datos.forEach(item => { console.log(item.name); });
   }
 
 
