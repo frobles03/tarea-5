@@ -19,10 +19,12 @@
         </div>
         
 
-        <div>
+        <div v-if=>
+          <strong>Rango de edad: </strong> adulto
+        </div>
     <button v-on:click="showMessage">Mostrar mas información</button>
    
-  </div>
+  
 
        
         <br><br> <br><br>
@@ -52,11 +54,8 @@ export default {
   },
   methods: {
     showMessage() {
-      this.lista = datos;
-    this.textoj = JSON.stringify(datos.data);
-    // console.log(this.textoj);
-    datos.forEach(item => { console.log(item.name); });
-   
+      alert(lista.dob.age);
+    
     }
   }
 
