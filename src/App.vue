@@ -1,6 +1,6 @@
 <template>
 <div>
-<h1>askdjasdlasd</h1>
+<h1>listado de personas</h1>
 <HelloWorld />
 </div>
 </template>
