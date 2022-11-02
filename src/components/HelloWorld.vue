@@ -19,7 +19,7 @@
         </div>
 
 
-        <button @click="say(mostrar.email)">Mostrar mas información</button>
+        <button @click="say('email: '+mostrar.email+ ' \n'+'ciudad: '+mostrar.location.city+ ' ' )">Mostrar mas información</button>
 
 
 
