@@ -17,16 +17,14 @@
         <div v-else-if="mostrar.dob.age >= 50">
           <strong>Rango de edad: </strong> abuelo
         </div>
-        
 
-        <div v-if=>
-          <strong>Rango de edad: </strong> adulto
-        </div>
-    <button v-on:click="showMessage">Mostrar mas información</button>
-   
-  
 
-       
+        <button @click="say(mostrar.email)">Mostrar mas información</button>
+
+
+
+
+
         <br><br> <br><br>
       </li>
     </ul>
@@ -38,8 +36,8 @@ import datos from "./users.json";
 export default {
   name: "AppVue",
   data() {
-    
-      
+
+
     return {
       lista: [],
       textoj: String,
@@ -53,9 +51,8 @@ export default {
     datos.forEach(item => { console.log(item.name); });
   },
   methods: {
-    showMessage() {
-      alert(lista.dob.age);
-    
+    say(message) {
+      alert(message)
     }
   }
 
